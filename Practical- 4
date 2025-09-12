@@ -12,3 +12,42 @@ else:
         print(f"{ch} is a Numeric Digit.")
     else:
         print(f"{ch} is a Special Character.")
+b)
+# Get input from user
+char = input("Enter a single character: ")
+
+# Check if it's exactly one character
+if len(char) != 1:
+    print("Please enter exactly one character.")
+else:
+    if char.isalpha():  # Check if it's a letter
+        if char.isupper():
+            print(f"The character '{char}' is an uppercase letter.")
+        else:
+            print(f"The character '{char}' is a lowercase letter.")
+    else:
+        print(f"The character '{char}' is not a letter.")
+c)
+# Get input from user
+char = input("Enter a single character: ")
+
+# Check if it's exactly one character
+if len(char) != 1:
+    print("Please enter exactly one character.")
+else:
+    if char.isdigit():  # Check if the character is a digit
+        digit_names = {
+            '0': 'ZERO',
+            '1': 'ONE',
+            '2': 'TWO',
+            '3': 'THREE',
+            '4': 'FOUR',
+            '5': 'FIVE',
+            '6': 'SIX',
+            '7': 'SEVEN',
+            '8': 'EIGHT',
+            '9': 'NINE'
+        }
+        print(f"The digit '{char}' is spelled as {digit_names[char]}.")
+    else:
+        print(f"The character '{char}' is not a numeric digit.")
