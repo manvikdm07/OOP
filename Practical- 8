@@ -1,0 +1,22 @@
+input_list = [1, 2, 'a', 4, 5.5, 6, True, None, 8]
+a)
+def cubes_of_even_integers_for_loop(input_list):
+    result = []
+    for item in input_list:
+        if isinstance(item, int) and item % 2 == 0:
+            result.append(item ** 3)
+    return result
+
+# Example
+input_list = [1, 2, 'a', 4, 5.5, 6, True, None, 8]
+print("Using for loop:", cubes_of_even_integers_for_loop(input_list))
+b)
+def cubes_of_even_integers_list_comp(input_list):
+    return [x ** 3 for x in input_list if isinstance(x, int) and x % 2 == 0]
+
+# Example
+print("Using list comprehension:", cubes_of_even_integers_list_comp(input_list))
+
+#output
+Using for loop: [8, 64, 216, 512]
+Using list comprehension: [8, 64, 216, 512]
