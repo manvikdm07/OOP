@@ -1,0 +1,52 @@
+def process_file(filename):
+    try:
+        with open(filename, 'r') as file:
+            lines = file.readlines()
+
+        # a. Count characters, words, and lines
+        total_chars = sum(len(line) for line in lines)
+        total_words = sum(len(line.split()) for line in lines)
+        total_lines = len(lines)
+
+        print(f"(a) Total characters: {total_chars}")
+        print(f"(a) Total words: {total_words}")
+        print(f"(a) Total lines: {total_lines}")
+
+        # b. Frequency of each character
+        char_freq = {}
+        for line in lines:
+            for char in line:
+                char_freq[char] = char_freq.get(char, 0) + 1
+
+        print("\n(b) Character Frequencies:")
+        for char, freq in sorted(char_freq.items()):
+            if char == '\n':
+                display_char = "\\n"
+            elif char == ' ':
+                display_char = "' '"
+            else:
+                display_char = char
+            print(f"'{display_char}': {freq}")
+
+        # c. Print words in reverse order
+        all_words = " ".join(lines).split()
+        reversed_words = list(reversed(all_words))
+        print("\n(c) Words in reverse order:")
+        print(" ".join(reversed_words))
+
+        # d. Copy even and odd lines to File1 and File2
+        with open('File1.txt', 'w') as even_file, open('File2.txt', 'w') as odd_file:
+            for index, line in enumerate(lines):
+                if (index + 1) % 2 == 0:  # Line numbers start at 1
+                    even_file.write(line)
+                else:
+                    odd_file.write(line)
+
+        print("\n(d) Even lines copied to 'File1.txt'")
+        print("(d) Odd lines copied to 'File2.txt'")
+
+    except FileNotFoundError:
+        print(f"Error: The file '{filename}' does not exist.")
+
+# Run the function with input file
+process_file('input.txt')
