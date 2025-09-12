@@ -1,0 +1,33 @@
+# Given tuple
+t1 = (1, 2, 5, 7, 9, 2, 4, 6, 8, 10)
+
+# a. Print half the values in one line, the other half in the next line
+mid = len(t1) // 2
+print("(a) First half of the tuple:", t1[:mid])
+print("    Second half of the tuple:", t1[mid:])
+
+# b. Create a tuple with even numbers only
+even_tuple = tuple(x for x in t1 if x % 2 == 0)
+print("\n(b) Tuple with even numbers:", even_tuple)
+
+# c. Concatenate with another tuple t2
+t2 = (11, 13, 15)
+concatenated_tuple = t1 + t2
+print("\n(c) Concatenated tuple (t1 + t2):", concatenated_tuple)
+
+# d. Find max and min values in the concatenated tuple
+maximum = max(concatenated_tuple)
+minimum = min(concatenated_tuple)
+print("\n(d) Maximum value:", maximum)
+print("    Minimum value:", minimum)
+
+#output
+(a) First half of the tuple: (1, 2, 5, 7, 9)
+    Second half of the tuple: (2, 4, 6, 8, 10)
+
+(b) Tuple with even numbers: (2, 2, 4, 6, 8, 10)
+
+(c) Concatenated tuple (t1 + t2): (1, 2, 5, 7, 9, 2, 4, 6, 8, 10, 11, 13, 15)
+
+(d) Maximum value: 15
+    Minimum value: 1
