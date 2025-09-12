@@ -1,0 +1,39 @@
+# Get the input string from the user
+original_string = input("Enter a string: ")
+
+# a. Find the frequency of a character
+char_freq = input("Enter a character to find its frequency: ")
+if len(char_freq) == 1:
+    frequency = original_string.count(char_freq)
+    print(f"(a) Frequency of '{char_freq}' is: {frequency}")
+else:
+    print("(a) Please enter exactly one character for frequency check.")
+
+# b. Replace a character by another
+char_to_replace = input("Enter the character to replace: ")
+replacement_char = input("Enter the new character: ")
+if len(char_to_replace) == 1 and len(replacement_char) == 1:
+    replaced_string = original_string.replace(char_to_replace, replacement_char)
+    print(f"(b) String after replacement: {replaced_string}")
+else:
+    print("(b) Please enter exactly one character for both replacement inputs.")
+
+# c. Remove first occurrence of a character
+char_to_remove_first = input("Enter a character to remove its first occurrence: ")
+if len(char_to_remove_first) == 1:
+    index = original_string.find(char_to_remove_first)
+    if index != -1:
+        removed_first = original_string[:index] + original_string[index+1:]
+        print(f"(c) String after removing first occurrence of '{char_to_remove_first}': {removed_first}")
+    else:
+        print(f"(c) Character '{char_to_remove_first}' not found.")
+else:
+    print("(c) Please enter exactly one character.")
+
+# d. Remove all occurrences of a character
+char_to_remove_all = input("Enter a character to remove all its occurrences: ")
+if len(char_to_remove_all) == 1:
+    removed_all = original_string.replace(char_to_remove_all, "")
+    print(f"(d) String after removing all occurrences of '{char_to_remove_all}': {removed_all}")
+else:
+    print("(d) Please enter exactly one character.")
