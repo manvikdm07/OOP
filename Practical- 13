@@ -1,0 +1,16 @@
+import re
+
+def get_valid_name():
+    name = input("Enter your name: ")
+
+    # Check if the name contains anything other than alphabets and spaces
+    if re.search(r'[^a-zA-Z\s]', name):
+        raise ValueError("Name should contain only alphabets and spaces.")
+
+    return name
+
+try:
+    user_name = get_valid_name()
+    print(f"Hello, {user_name}!")
+except ValueError as ve:
+    print(f"Error: {ve}")
