@@ -1,0 +1,18 @@
+# Get two strings
+str1 = input("Enter the first string: ")
+str2 = input("Enter the second string: ")
+
+# Get the value of n
+n = int(input("Enter the number of characters to swap: "))
+
+# Check if n is valid
+if n > len(str1) or n > len(str2):
+    print("Cannot swap: 'n' is larger than the length of one of the strings.")
+else:
+    # Swapping the first n characters
+    new_str1 = str2[:n] + str1[n:]
+    new_str2 = str1[:n] + str2[n:]
+
+    print(f"After swapping first {n} characters:")
+    print("First string:", new_str1)
+    print("Second string:", new_str2)
